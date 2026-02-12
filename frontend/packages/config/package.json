@@ -1,0 +1,11 @@
+{
+    "name": "@travel/config",
+    "version": "1.0.0",
+    "main": "tamagui.config.ts",
+    "types": "tamagui.config.ts",
+    "dependencies": {
+      "tamagui": "^2.0.0-rc.11",
+      "@tamagui/config": "^2.0.0-rc.11"
+    }
+  }
+  

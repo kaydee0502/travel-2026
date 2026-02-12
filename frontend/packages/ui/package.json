@@ -1,0 +1,10 @@
+{
+  "name": "@travel/ui",
+  "version": "1.0.0",
+  "main": "common/index.ts",
+  "types": "common/index.ts",
+  "dependencies": {
+    "tamagui": "^2.0.0-rc.11",
+    "@tamagui/config": "^2.0.0-rc.11"
+  }
+}
