@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { YStack, Text, View } from 'tamagui';
+import { YStack, XStack, Text, View } from 'tamagui';
 import { Select, Button } from '@travel/ui';
 
-export const OnboardingScreen: React.FC = () => {
+interface OnboardingScreenProps {
+  onNext?: () => void;
+}
+
+export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('');
@@ -11,6 +15,7 @@ export const OnboardingScreen: React.FC = () => {
 
   const handleNext = () => {
     console.log('Next with data:', { name, phone, country, gender, nationality });
+    onNext?.();
   };
 
   const isFormValid = name.trim() && phone.trim() && country.trim();
@@ -24,15 +29,35 @@ export const OnboardingScreen: React.FC = () => {
       >
         {/* Header */}
         <YStack gap="$3" marginBottom="$6" alignItems="center">
-          <Text
-            fontSize={24}
-            fontFamily="$body"
-            fontWeight="400"
-            color="#3340CF"
-            textAlign="center"
-          >
-            Let's get you setup!
-          </Text>
+          <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Text
+              fontSize={24}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              Let's get{' '}
+            </Text>
+            <Text
+              fontSize={24}
+              fontFamily="$body"
+              fontWeight="700"
+              color="#3340CF"
+              textAlign="center"
+            >
+              you
+            </Text>
+            <Text
+              fontSize={24}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              {' '}setup!
+            </Text>
+          </XStack>
           <YStack gap="$2" alignItems="center">
             <Text
               fontSize={12}

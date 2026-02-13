@@ -96,10 +96,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           left={95}
           top={127}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -109,10 +106,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           right={20}
           top={490}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -122,10 +116,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           left={68}
           top={446}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -135,10 +126,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           right={63}
           top={141}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -148,10 +136,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           left={124}
           top={602}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -161,10 +146,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           right={51}
           top={253}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
         <View
           position="absolute"
@@ -174,10 +156,7 @@ export const TripsScreen: React.FC = () => {
           borderRadius={10}
           left={16}
           top={215}
-          shadowColor="rgba(0, 0, 0, 0.25)"
-          shadowOffset={{ width: -3, height: 6 }}
-          shadowOpacity={1}
-          shadowRadius={10}
+          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
         />
 
         {/* Center Content */}
@@ -188,15 +167,35 @@ export const TripsScreen: React.FC = () => {
           paddingHorizontal="$6"
           zIndex={20}
         >
-          <Text
-            fontSize={16}
-            fontFamily="$body"
-            fontWeight="400"
-            color="#3340CF"
-            textAlign="center"
-          >
-            Your next adventure awaits you
-          </Text>
+          <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              Your{' '}
+            </Text>
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="700"
+              color="#3340CF"
+              textAlign="center"
+            >
+              next adventure
+            </Text>
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              {' '}awaits you
+            </Text>
+          </XStack>
           <View width={137}>
             <Button onPress={handlePlanTrip} variant="primary">
               Plan a new trip

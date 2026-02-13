@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { YStack, XStack, Text, View, ScrollView } from 'tamagui';
 import { Chip, Button } from '@travel/ui';
 
-export const PreferencesScreen: React.FC = () => {
+interface PreferencesScreenProps {
+  onSubmit?: () => void;
+  onSkip?: () => void;
+}
+
+export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, onSkip }) => {
   // Travel vibe preferences
   const [travelVibes, setTravelVibes] = useState<string[]>(['🥾 Adventure', '🏛️ Cultural Exploration']);
   
@@ -34,10 +39,12 @@ export const PreferencesScreen: React.FC = () => {
       activities,
       travelWith,
     });
+    onSubmit?.();
   };
 
   const handleSkip = () => {
     console.log('Skip preferences');
+    onSkip?.();
   };
 
   return (

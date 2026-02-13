@@ -19,7 +19,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <YStack gap="$2" width="100%">
       <Text
-        fontSize={10}
+        fontSize={14}
         fontFamily="$body"
         color="#000000"
         fontWeight="400"
@@ -32,17 +32,24 @@ export const Input: React.FC<InputProps> = ({
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
         backgroundColor="#FFFFFF"
-        borderWidth={0}
-        borderRadius="$6"
-        fontSize={10}
+        borderWidth={1}
+        borderColor="#E5E5E5"
+        borderRadius={9999}
+        fontSize={14}
         fontFamily="$body"
+        fontWeight="400"
         color="#000000"
-        paddingHorizontal="$3"
-        paddingVertical="$3"
-        shadowColor="rgba(0, 0, 0, 0.08)"
-        shadowOffset={{ width: 0, height: 2 }}
-        shadowOpacity={1}
-        shadowRadius={4}
+        // @ts-ignore - Tamagui color token type issue
+        placeholderTextColor="#9CA3AF"
+        paddingHorizontal={20}
+        paddingVertical={14}
+        height={48}
+        outlineWidth={0}
+        focusStyle={{
+          borderColor: "#3340CF",
+          borderWidth: 2,
+          outlineWidth: 0,
+        }}
       />
     </YStack>
   );

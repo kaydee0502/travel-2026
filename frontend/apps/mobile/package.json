@@ -16,12 +16,14 @@
     "@tamagui/native": "^2.0.0-rc.11",
     "@tamagui/themes": "^2.0.0-rc.11",
     "expo": "~54.0.33",
+    "expo-font": "~13.0.1",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
     "react-native-web": "^0.21.0",
-    "tamagui": "^2.0.0-rc.11"
+    "tamagui": "^2.0.0-rc.11",
+    "@expo-google-fonts/source-sans-pro": "^0.2.3"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",

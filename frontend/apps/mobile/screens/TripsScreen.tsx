@@ -78,15 +78,35 @@ export const TripsScreen: React.FC = () => {
           paddingHorizontal="$6"
           zIndex={20}
         >
-          <Text
-            fontSize={16}
-            fontFamily="$body"
-            fontWeight="400"
-            color="#3340CF"
-            textAlign="center"
-          >
-            Your next adventure awaits you
-          </Text>
+          <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              Your{' '}
+            </Text>
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="700"
+              color="#3340CF"
+              textAlign="center"
+            >
+              next adventure
+            </Text>
+            <Text
+              fontSize={16}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              {' '}awaits you
+            </Text>
+          </XStack>
           <View width={137}>
             <Button onPress={handlePlanTrip} variant="primary">
               Plan a new trip

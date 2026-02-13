@@ -22,24 +22,26 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       >
         {/* Header */}
         <YStack gap="$2" alignItems="center">
-          <Text
-            fontSize={24}
-            fontFamily="$body"
-            fontWeight="700"
-            color="#3340CF"
-            textAlign="center"
-          >
-            Truly
-          </Text>
-          <Text
-            fontSize={24}
-            fontFamily="$body"
-            fontWeight="400"
-            color="#3340CF"
-            textAlign="center"
-          >
-            Personalised Travel
-          </Text>
+          <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Text
+              fontSize={24}
+              fontFamily="$body"
+              fontWeight="700"
+              color="#3340CF"
+              textAlign="center"
+            >
+              Truly
+            </Text>
+            <Text
+              fontSize={24}
+              fontFamily="$body"
+              fontWeight="400"
+              color="#3340CF"
+              textAlign="center"
+            >
+              {' '}Personalised Travel
+            </Text>
+          </XStack>
         </YStack>
 
         {/* Description */}

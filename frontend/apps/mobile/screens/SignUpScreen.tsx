@@ -6,20 +6,27 @@ import { Input, Button, Divider } from '@travel/ui';
 const googleIcon = require('../assets/oauth/google.png');
 const appleIcon = require('../assets/oauth/apple.png');
 
-export const SignUpScreen: React.FC = () => {
+interface SignUpScreenProps {
+  onAuthSuccess?: () => void;
+}
+
+export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleContinue = () => {
     console.log('Continue with email:', email);
+    onAuthSuccess?.();
   };
 
   const handleGoogleSignUp = () => {
     console.log('Sign up with Google');
+    onAuthSuccess?.();
   };
 
   const handleAppleSignUp = () => {
     console.log('Sign up with Apple');
+    onAuthSuccess?.();
   };
 
   const handleSignIn = () => {

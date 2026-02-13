@@ -6177,7 +6177,7 @@ var require_View = __commonJS({
       pointerEvents: true
     });
     var pickProps = /* @__PURE__ */ __name((props) => (0, _pick.default)(props, forwardPropsList), "pickProps");
-    var View = /* @__PURE__ */ React4.forwardRef((props, forwardedRef) => {
+    var View2 = /* @__PURE__ */ React4.forwardRef((props, forwardedRef) => {
       var hrefAttrs = props.hrefAttrs, onLayout = props.onLayout, onMoveShouldSetResponder = props.onMoveShouldSetResponder, onMoveShouldSetResponderCapture = props.onMoveShouldSetResponderCapture, onResponderEnd = props.onResponderEnd, onResponderGrant = props.onResponderGrant, onResponderMove = props.onResponderMove, onResponderReject = props.onResponderReject, onResponderRelease = props.onResponderRelease, onResponderStart = props.onResponderStart, onResponderTerminate = props.onResponderTerminate, onResponderTerminationRequest = props.onResponderTerminationRequest, onScrollShouldSetResponder = props.onScrollShouldSetResponder, onScrollShouldSetResponderCapture = props.onScrollShouldSetResponderCapture, onSelectionChangeShouldSetResponder = props.onSelectionChangeShouldSetResponder, onSelectionChangeShouldSetResponderCapture = props.onSelectionChangeShouldSetResponderCapture, onStartShouldSetResponder = props.onStartShouldSetResponder, onStartShouldSetResponderCapture = props.onStartShouldSetResponderCapture, rest = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       if (process.env.NODE_ENV !== "production") {
         React4.Children.toArray(props.children).forEach((item) => {
@@ -6237,7 +6237,7 @@ var require_View = __commonJS({
         writingDirection
       });
     });
-    View.displayName = "View";
+    View2.displayName = "View";
     var styles = _StyleSheet.default.create({
       view$raw: {
         alignContent: "flex-start",
@@ -6262,7 +6262,7 @@ var require_View = __commonJS({
         display: "inline-flex"
       }
     });
-    var _default = exports2.default = View;
+    var _default = exports2.default = View2;
     module2.exports = exports2.default;
   }
 });
@@ -18722,11 +18722,11 @@ var require_useEvent = __commonJS({
     "use strict";
     var _interopRequireDefault = require_interopRequireDefault().default;
     exports2.__esModule = true;
-    exports2.default = useEvent2;
+    exports2.default = useEvent3;
     var _addEventListener = require_addEventListener();
     var _useLayoutEffect = _interopRequireDefault(require_useLayoutEffect());
     var _useStable = _interopRequireDefault(require_useStable());
-    function useEvent2(eventType, options) {
+    function useEvent3(eventType, options) {
       var targetListeners = (0, _useStable.default)(() => /* @__PURE__ */ new Map());
       var addListener = (0, _useStable.default)(() => {
         return (target, callback) => {
@@ -18754,7 +18754,7 @@ var require_useEvent = __commonJS({
       }, [targetListeners]);
       return addListener;
     }
-    __name(useEvent2, "useEvent");
+    __name(useEvent3, "useEvent");
     module2.exports = exports2.default;
   }
 });
@@ -20948,6 +20948,9 @@ Expected a subset of: ${expected.join(", ")}
   }
   return tamaguiConfig;
 };
+
+// ../../node_modules/tamagui/dist/esm/index.mjs
+var import_core2 = require("@tamagui/core");
 
 // ../../node_modules/@tamagui/themes/dist/esm/generated-new.mjs
 function t(a) {
@@ -23822,7 +23825,7 @@ shorthands.oy = "overflowY";
 shorthands.ol = "outline";
 
 // ../../node_modules/@tamagui/font-inter/dist/esm/index.mjs
-var import_core2 = require("@tamagui/core");
+var import_core3 = require("@tamagui/core");
 var createInterFont = /* @__PURE__ */ __name((font = {}, {
   sizeLineHeight = /* @__PURE__ */ __name((size3) => size3 + 10, "sizeLineHeight"),
   sizeSize = /* @__PURE__ */ __name((size3) => size3 * 1, "sizeSize")
@@ -23831,9 +23834,9 @@ var createInterFont = /* @__PURE__ */ __name((font = {}, {
     ...defaultSizes,
     ...font.size
   }).map(([k, v]) => [k, sizeSize(+v)]));
-  return (0, import_core2.createFont)({
-    family: import_core2.isWeb ? 'Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "Inter",
-    lineHeight: Object.fromEntries(Object.entries(size3).map(([k, v]) => [k, sizeLineHeight((0, import_core2.getVariableValue)(v))])),
+  return (0, import_core3.createFont)({
+    family: import_core3.isWeb ? 'Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' : "Inter",
+    lineHeight: Object.fromEntries(Object.entries(size3).map(([k, v]) => [k, sizeLineHeight((0, import_core3.getVariableValue)(v))])),
     weight: {
       4: "300"
     },
@@ -23865,9 +23868,9 @@ var defaultSizes = {
 };
 
 // ../../node_modules/@tamagui/font-silkscreen/dist/esm/index.mjs
-var import_core3 = require("@tamagui/core");
-var createSilkscreenFont = /* @__PURE__ */ __name((font = {}) => (0, import_core3.createFont)({
-  family: import_core3.isWeb ? "Silkscreen, Fira Code, Monaco, Consolas, Ubuntu Mono, monospace" : "Silkscreen",
+var import_core4 = require("@tamagui/core");
+var createSilkscreenFont = /* @__PURE__ */ __name((font = {}) => (0, import_core4.createFont)({
+  family: import_core4.isWeb ? "Silkscreen, Fira Code, Monaco, Consolas, Ubuntu Mono, monospace" : "Silkscreen",
   size: size2,
   lineHeight: Object.fromEntries(Object.entries(font.size || size2).map(([k, v]) => [k, typeof v == "number" ? Math.round(v * 1.2 + 6) : v])),
   weight: {
@@ -24102,7 +24105,56 @@ var config = {
 };
 
 // ../../packages/config/tamagui.config.ts
-var config2 = createTamagui(config);
+var sourceSansProFont = (0, import_core2.createFont)({
+  family: "SourceSansPro_400Regular",
+  size: {
+    1: 10,
+    2: 12,
+    3: 14,
+    4: 16,
+    5: 18,
+    6: 20,
+    7: 24,
+    8: 28,
+    9: 32,
+    10: 40
+  },
+  lineHeight: {
+    1: 14,
+    2: 16,
+    3: 20,
+    4: 22,
+    5: 24,
+    6: 28,
+    7: 32,
+    8: 36,
+    9: 40,
+    10: 48
+  },
+  weight: {
+    1: "400",
+    4: "400",
+    6: "600",
+    7: "700"
+  },
+  letterSpacing: {
+    1: 0,
+    4: 0,
+    7: -0.5
+  },
+  face: {
+    400: { normal: "SourceSansPro_400Regular" },
+    600: { normal: "SourceSansPro_600SemiBold" },
+    700: { normal: "SourceSansPro_700Bold" }
+  }
+});
+var config2 = createTamagui({
+  ...config,
+  fonts: {
+    heading: sourceSansProFont,
+    body: sourceSansProFont
+  }
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   config
