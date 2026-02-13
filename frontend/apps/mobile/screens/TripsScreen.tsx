@@ -1,11 +1,20 @@
 import React from 'react';
-import { YStack, XStack, Text, View } from 'tamagui';
+import { YStack, XStack, Text, View, Image } from 'tamagui';
 import { StyleSheet } from 'react-native';
 import { Button, BottomNav } from '@travel/ui';
 
+// Trip images - using require for React Native
+const Image1 = require('../assets/trips/Image1.png');
+const Image2 = require('../assets/trips/Image2.png');
+const Image3 = require('../assets/trips/Image3.png');
+const Image4 = require('../assets/trips/Image4.png');
+const Image5 = require('../assets/trips/Image5.png');
+const Image6 = require('../assets/trips/Image6.png');
+const Image7 = require('../assets/trips/Image7.png');
+
 export const TripsScreen: React.FC = () => {
   const handlePlanTrip = () => {
-    console.log('Plan a new trip');
+    console.log('Create Your First Trip');
   };
 
   const handleTabPress = (tab: string) => {
@@ -62,22 +71,91 @@ export const TripsScreen: React.FC = () => {
         <View style={styles.circle3} />
 
         {/* Decorative Images - positioned around circles */}
-        <View style={[styles.imageContainer, styles.image1]} />
-        <View style={[styles.imageContainer, styles.image2]} />
-        <View style={[styles.imageContainer, styles.image3]} />
-        <View style={[styles.imageContainer, styles.image4]} />
-        <View style={[styles.imageContainer, styles.image5]} />
-        <View style={[styles.imageContainer, styles.image6]} />
-        <View style={[styles.imageContainer, styles.image7]} />
+        <Image 
+          src={Image1} 
+          position="absolute"
+          width={64} 
+          height={64} 
+          left={95}
+          top={127}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image2} 
+          position="absolute"
+          width={64} 
+          height={64} 
+          right={20}
+          top={490}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image3} 
+          position="absolute"
+          width={40} 
+          height={40} 
+          left={68}
+          top={446}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image4} 
+          position="absolute"
+          width={40} 
+          height={40} 
+          right={63}
+          top={141}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image5} 
+          position="absolute"
+          width={40} 
+          height={40} 
+          left={124}
+          top={602}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image6} 
+          position="absolute"
+          width={24} 
+          height={24} 
+          right={51}
+          top={253}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
+        <Image 
+          src={Image7} 
+          position="absolute"
+          width={24} 
+          height={24} 
+          left={16}
+          top={215}
+          borderRadius={10}
+          objectFit="cover"
+          style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 12, elevation: 5 }}
+        />
 
         {/* Center Content */}
-        <YStack
-          position="absolute"
-          alignItems="center"
-          gap="$3"
-          paddingHorizontal="$6"
-          zIndex={20}
-        >
+        <View style={styles.centerContent}>
+          <YStack
+            alignItems="center"
+            gap="$3"
+            paddingHorizontal="$6"
+          >
           <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
             <Text
               fontSize={16}
@@ -107,12 +185,13 @@ export const TripsScreen: React.FC = () => {
               {' '}awaits you
             </Text>
           </XStack>
-          <View width={137}>
+          <View width={167}>
             <Button onPress={handlePlanTrip} variant="primary">
-              Plan a new trip
+              Create Your First Trip
             </Button>
           </View>
         </YStack>
+        </View>
       </YStack>
 
       {/* Bottom Navigation */}
@@ -152,56 +231,104 @@ const styles = StyleSheet.create({
     left: 44,
     top: 199,
   },
-  imageContainer: {
+  centerContent: {
     position: 'absolute',
-    backgroundColor: '#D3D3D3',
-    borderRadius: 10,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: -3, height: 6 },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 5,
+    left: 0,
+    right: 0,
+    top: 352,
+    transform: [{ translateY: -50 }],
+    zIndex: 20,
+    alignItems: 'center',
   },
   image1: {
+    position: 'absolute',
     width: 64,
     height: 64,
     left: 95,
     top: 127,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image2: {
+    position: 'absolute',
     width: 64,
     height: 64,
     right: 20,
     top: 490,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image3: {
+    position: 'absolute',
     width: 40,
     height: 40,
     left: 68,
     top: 446,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image4: {
+    position: 'absolute',
     width: 40,
     height: 40,
     right: 63,
     top: 141,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image5: {
+    position: 'absolute',
     width: 40,
     height: 40,
     left: 124,
     top: 602,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image6: {
+    position: 'absolute',
     width: 24,
     height: 24,
     right: 51,
     top: 253,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
   image7: {
+    position: 'absolute',
     width: 24,
     height: 24,
     left: 16,
     top: 215,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    elevation: 5,
   },
 });

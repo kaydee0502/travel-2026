@@ -1,10 +1,19 @@
 import React from 'react';
-import { YStack, XStack, Text, View } from 'tamagui';
+import { YStack, XStack, Text, View, Image } from 'tamagui';
 import { Button, BottomNav } from '@travel/ui';
+
+// Import trip images
+import Image1 from '../assets/trips/Image1.png';
+import Image2 from '../assets/trips/Image2.png';
+import Image3 from '../assets/trips/Image3.png';
+import Image4 from '../assets/trips/Image4.png';
+import Image5 from '../assets/trips/Image5.png';
+import Image6 from '../assets/trips/Image6.png';
+import Image7 from '../assets/trips/Image7.png';
 
 export const TripsScreen: React.FC = () => {
   const handlePlanTrip = () => {
-    console.log('Plan a new trip');
+    console.log('Create Your First Trip');
   };
 
   const handleTabPress = (tab: string) => {
@@ -88,84 +97,102 @@ export const TripsScreen: React.FC = () => {
         />
 
         {/* Decorative Images - positioned around circles */}
-        <View
+        <Image 
+          src={Image1}
           position="absolute"
           width={64}
           height={64}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           left={95}
           top={127}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image2}
           position="absolute"
           width={64}
           height={64}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           right={20}
           top={490}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image3}
           position="absolute"
           width={40}
           height={40}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           left={68}
           top={446}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image4}
           position="absolute"
           width={40}
           height={40}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           right={63}
           top={141}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image5}
           position="absolute"
           width={40}
           height={40}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           left={124}
           top={602}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image6}
           position="absolute"
           width={24}
           height={24}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           right={51}
           top={253}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
-        <View
+        <Image 
+          src={Image7}
           position="absolute"
           width={24}
           height={24}
-          backgroundColor="#D3D3D3"
-          borderRadius={10}
           left={16}
           top={215}
-          boxShadow="-3px 6px 10px rgba(0, 0, 0, 0.25)"
+          borderRadius={10}
+          boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+          objectFit="cover"
+          alt="Trip destination"
         />
 
         {/* Center Content */}
         <YStack
           position="absolute"
+          left={0}
+          right={0}
+          top={352}
+          style={{ transform: 'translateY(-50%)' }}
+          zIndex={20}
           alignItems="center"
           gap="$3"
           paddingHorizontal="$6"
-          zIndex={20}
         >
           <XStack gap={0} alignItems="center" justifyContent="center" flexWrap="wrap">
             <Text
@@ -196,9 +223,9 @@ export const TripsScreen: React.FC = () => {
               {' '}awaits you
             </Text>
           </XStack>
-          <View width={137}>
+          <View width={167}>
             <Button onPress={handlePlanTrip} variant="primary">
-              Plan a new trip
+              Create Your First Trip
             </Button>
           </View>
         </YStack>

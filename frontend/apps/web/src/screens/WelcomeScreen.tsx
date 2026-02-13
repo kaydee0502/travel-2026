@@ -1,5 +1,5 @@
 import React from 'react';
-import { YStack, Text, View } from 'tamagui';
+import { YStack, Text, View, XStack } from 'tamagui';
 import { Button } from '@travel/ui';
 
 interface WelcomeScreenProps {
@@ -16,7 +16,9 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       <YStack
         flex={1}
         paddingHorizontal="$4"
-        justifyContent="center"
+        paddingTop={80}
+        paddingBottom="$8"
+        justifyContent="flex-start"
         alignItems="center"
         gap="$6"
       >

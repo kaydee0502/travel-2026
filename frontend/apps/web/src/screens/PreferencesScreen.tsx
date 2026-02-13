@@ -48,8 +48,12 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
   };
 
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
-      <ScrollView flex={1} showsVerticalScrollIndicator={false}>
+    <View flex={1} backgroundColor="#FFFFFF" height="100%">
+      <ScrollView 
+        flex={1} 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ minHeight: '100%' }}
+      >
         <YStack paddingHorizontal="$4" paddingVertical="$6" gap="$6">
           {/* Travel Vibe Section */}
           <YStack gap="$3">

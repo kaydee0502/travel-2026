@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 
 interface NavItem {
   label: string;
-  icon?: any;
+  icon: string;
   active?: boolean;
 }
 
@@ -15,11 +15,11 @@ interface BottomNavProps {
 
 export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTabPress }) => {
   const navItems: NavItem[] = [
-    { label: 'Explore' },
-    { label: 'Near Me' },
-    { label: 'Trips' },
-    { label: 'My world' },
-    { label: 'Profile' },
+    { label: 'Explore', icon: '🔍' },
+    { label: 'Near Me', icon: '📍' },
+    { label: 'Trips', icon: '🗺️' },
+    { label: 'My world', icon: '🌍' },
+    { label: 'Profile', icon: '👤' },
   ];
 
   return (
@@ -49,7 +49,12 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTab
           cursor="pointer"
           pressStyle={{ opacity: 0.7 }}
         >
-          <View width={20} height={20} />
+          <Text
+            fontSize={20}
+            style={{ opacity: activeTab === item.label ? 1 : 0.6 }}
+          >
+            {item.icon}
+          </Text>
           <Text
             fontSize={8}
             fontFamily="$body"
