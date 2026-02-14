@@ -1,6 +1,6 @@
 import React from 'react';
 import { YStack, XStack, Text, View, Image } from 'tamagui';
-import { Button, BottomNav } from '@travel/ui';
+import { Button, BottomNav, ThemeToggle } from '@travel/ui';
 
 // Import trip images
 import Image1 from '../assets/trips/Image1.png';
@@ -25,7 +25,7 @@ export const TripsScreen: React.FC = () => {
   };
 
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
+    <View flex={1} backgroundColor="$background">
       {/* Header */}
       <XStack
         position="absolute"
@@ -36,30 +36,27 @@ export const TripsScreen: React.FC = () => {
         paddingBottom="$2"
         paddingHorizontal="$4"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-between"
         zIndex={10}
-        backgroundColor="#FFFFFF"
+        backgroundColor="$background"
       >
         {/* Back Button */}
         <View
-          position="absolute"
-          left="$4"
           onPress={handleBack}
           cursor="pointer"
           pressStyle={{ opacity: 0.7 }}
         >
-          <Text fontSize={18} color="#3340CF">←</Text>
+          <Text fontSize={18} color="$primary">←</Text>
         </View>
-
-        {/* Title */}
-        <Text
-          fontSize={16}
-          fontFamily="$body"
-          fontWeight="700"
-          color="#3340CF"
-        >
-          Trips
-        </Text>
+        
+        {/* Theme Toggle */}
+        <View position="absolute" left="50%" transform={[{ translateX: -28 }]}>
+          <Text fontSize={20} fontWeight="600" color="$text">
+            Trips
+          </Text>
+        </View>
+        
+        <ThemeToggle size="small" />
       </XStack>
 
       {/* Main Content Area */}
@@ -71,7 +68,7 @@ export const TripsScreen: React.FC = () => {
           height={540}
           borderRadius={270}
           borderWidth={1}
-          borderColor="#E6E6E6"
+          borderColor="$border"
           left={-75}
           top={82}
         />
@@ -81,7 +78,7 @@ export const TripsScreen: React.FC = () => {
           height={420}
           borderRadius={210}
           borderWidth={1}
-          borderColor="#E6E6E6"
+          borderColor="$border"
           left={-14}
           top={141}
         />
@@ -91,7 +88,7 @@ export const TripsScreen: React.FC = () => {
           height={304}
           borderRadius={152}
           borderWidth={1}
-          borderColor="#E6E6E6"
+          borderColor="$border"
           left={44}
           top={199}
         />
@@ -199,7 +196,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               Your{' '}
@@ -208,7 +205,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="700"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               next adventure
@@ -217,7 +214,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               {' '}awaits you

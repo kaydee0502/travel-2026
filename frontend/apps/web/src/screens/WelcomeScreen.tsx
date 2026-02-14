@@ -12,7 +12,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   onSkip,
 }) => {
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
+    <View flex={1} backgroundColor="$background">
       <YStack
         flex={1}
         paddingHorizontal="$4"
@@ -29,7 +29,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               fontSize={24}
               fontFamily="$body"
               fontWeight="700"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               Truly
@@ -38,7 +38,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               fontSize={24}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               {' '}Personalised Travel
@@ -52,7 +52,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             fontSize={14}
             fontFamily="$body"
             fontWeight="400"
-            color="#000000"
+            color="$text"
             textAlign="center"
           >
             To curate a personalised experience with
@@ -61,7 +61,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             fontSize={14}
             fontFamily="$body"
             fontWeight="400"
-            color="#000000"
+            color="$text"
             textAlign="center"
           >
             us, we'd like to ask some questions
@@ -70,7 +70,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             fontSize={14}
             fontFamily="$body"
             fontWeight="400"
-            color="#000000"
+            color="$text"
             textAlign="center"
           >
             about you travel preferences.
@@ -88,7 +88,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             fontSize={14}
             fontFamily="$body"
             fontWeight="400"
-            color="#3340CF"
+            color="$primary"
             textAlign="center"
             onPress={onSkip}
             cursor="pointer"

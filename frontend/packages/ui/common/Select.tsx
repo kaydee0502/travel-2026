@@ -25,7 +25,7 @@ export const Select: React.FC<SelectProps> = ({
       <Text
         fontSize={14}
         fontFamily="$body"
-        color="#000000"
+        color="$text"
         fontWeight="400"
       >
         {label}{required && '*'}
@@ -36,22 +36,22 @@ export const Select: React.FC<SelectProps> = ({
         onChangeText={onChangeText}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        backgroundColor="#FFFFFF"
+        backgroundColor="$card"
         borderWidth={isFocused ? 2 : 1}
-        borderColor={error ? '#B91C1C' : isFocused ? '#3340CF' : '#E5E5E5'}
+        borderColor={error ? '#B91C1C' : isFocused ? '$primary' : '$border'}
         borderRadius={9999}
         fontSize={14}
         fontFamily="$body"
         fontWeight="400"
-        color="#000000"
+        color="$text"
         // @ts-ignore - Tamagui color token type issue
-        placeholderTextColor="#9CA3AF"
+        placeholderTextColor="$textSecondary"
         paddingHorizontal={20}
         paddingVertical={14}
         height={48}
         outlineWidth={0}
         focusStyle={{
-          borderColor: error ? '#B91C1C' : '#3340CF',
+          borderColor: error ? '#B91C1C' : '$primary',
           borderWidth: 2,
           outlineWidth: 0,
         }}

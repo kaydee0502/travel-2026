@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { YStack, XStack, Text, View } from 'tamagui';
 import { Image } from 'react-native';
-import { Input, Button, Divider } from '@travel/ui';
+import { Input, Button, Divider, ThemeToggle } from '@travel/ui';
 
 const googleIcon = require('../assets/oauth/google.png');
 const appleIcon = require('../assets/oauth/apple.png');
@@ -34,7 +34,12 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => 
   };
 
   return (
-    <View flex={1} backgroundColor="#3340CF">
+    <View flex={1} backgroundColor="$primary">
+      {/* Theme Toggle - Top Right */}
+      <View position="absolute" top="$4" right="$4" zIndex={100}>
+        <ThemeToggle size="small" />
+      </View>
+      
       {/* Main Container */}
       <YStack
         flex={1}
@@ -47,10 +52,10 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => 
           left={0}
           right={0}
           bottom={0}
-          backgroundColor="#FFFFFF"
+          backgroundColor="$card"
           borderTopLeftRadius="$8"
           borderTopRightRadius="$8"
-          shadowColor="rgba(0, 0, 0, 0.08)"
+          shadowColor="$shadowColor"
           shadowOffset={{ width: 0, height: 0 }}
           shadowOpacity={1}
           shadowRadius={0}
@@ -63,7 +68,7 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => 
               fontSize={18}
               fontFamily="$body"
               fontWeight="700"
-              color="#000000"
+              color="$text"
             >
               Create an account
             </Text>
@@ -72,7 +77,7 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => 
                 fontSize={10}
                 fontFamily="$body"
                 fontWeight="400"
-                color="#000000"
+                color="$text"
               >
                 Already a member?
               </Text>
@@ -80,7 +85,7 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ onAuthSuccess }) => 
                 fontSize={10}
                 fontFamily="$body"
                 fontWeight="600"
-                color="#3340CF"
+                color="$primary"
                 onPress={handleSignIn}
                 cursor="pointer"
               >

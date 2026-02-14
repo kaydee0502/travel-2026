@@ -3184,13 +3184,13 @@ var require_parse = __commonJS({
     var plus = "+".charCodeAt(0);
     var isUnicodeRange = /^[a-f0-9?-]+$/i;
     module2.exports = function(input) {
-      var tokens2 = [];
+      var tokens3 = [];
       var value = input;
       var next, quote, prev, token, escape, escapePos, whitespacePos, parenthesesOpenPos;
       var pos = 0;
       var code = value.charCodeAt(pos);
       var max = value.length;
-      var stack = [{ nodes: tokens2 }];
+      var stack = [{ nodes: tokens3 }];
       var balanced = 0;
       var parent;
       var name = "";
@@ -3204,7 +3204,7 @@ var require_parse = __commonJS({
             code = value.charCodeAt(next);
           } while (code <= 32);
           token = value.slice(pos, next);
-          prev = tokens2[tokens2.length - 1];
+          prev = tokens3[tokens3.length - 1];
           if (code === closeParentheses && balanced) {
             after = token;
           } else if (prev && prev.type === "div") {
@@ -3213,7 +3213,7 @@ var require_parse = __commonJS({
           } else if (code === comma || code === colon || code === slash && value.charCodeAt(next + 1) !== star && (!parent || parent && parent.type === "function" && parent.value !== "calc")) {
             before = token;
           } else {
-            tokens2.push({
+            tokens3.push({
               type: "space",
               sourceIndex: pos,
               sourceEndIndex: next,
@@ -3246,7 +3246,7 @@ var require_parse = __commonJS({
           } while (escape);
           token.value = value.slice(pos + 1, next);
           token.sourceEndIndex = token.unclosed ? next : next + 1;
-          tokens2.push(token);
+          tokens3.push(token);
           pos = next + 1;
           code = value.charCodeAt(pos);
         } else if (code === slash && value.charCodeAt(pos + 1) === star) {
@@ -3262,12 +3262,12 @@ var require_parse = __commonJS({
             token.sourceEndIndex = next;
           }
           token.value = value.slice(pos + 2, next);
-          tokens2.push(token);
+          tokens3.push(token);
           pos = next + 2;
           code = value.charCodeAt(pos);
         } else if ((code === slash || code === star) && parent && parent.type === "function" && parent.value === "calc") {
           token = value[pos];
-          tokens2.push({
+          tokens3.push({
             type: "word",
             sourceIndex: pos - before.length,
             sourceEndIndex: pos + token.length,
@@ -3277,7 +3277,7 @@ var require_parse = __commonJS({
           code = value.charCodeAt(pos);
         } else if (code === slash || code === comma || code === colon) {
           token = value[pos];
-          tokens2.push({
+          tokens3.push({
             type: "div",
             sourceIndex: pos - before.length,
             sourceEndIndex: pos + token.length,
@@ -3356,14 +3356,14 @@ var require_parse = __commonJS({
             pos = next + 1;
             token.sourceEndIndex = token.unclosed ? next : pos;
             code = value.charCodeAt(pos);
-            tokens2.push(token);
+            tokens3.push(token);
           } else {
             balanced += 1;
             token.after = "";
             token.sourceEndIndex = pos + 1;
-            tokens2.push(token);
+            tokens3.push(token);
             stack.push(token);
-            tokens2 = token.nodes = [];
+            tokens3 = token.nodes = [];
             parent = token;
           }
           name = "";
@@ -3377,7 +3377,7 @@ var require_parse = __commonJS({
           stack[stack.length - 1].sourceEndIndex = pos;
           stack.pop();
           parent = stack[balanced];
-          tokens2 = parent.nodes;
+          tokens3 = parent.nodes;
         } else {
           next = pos;
           do {
@@ -3391,14 +3391,14 @@ var require_parse = __commonJS({
           if (openParentheses === code) {
             name = token;
           } else if ((uLower === token.charCodeAt(0) || uUpper === token.charCodeAt(0)) && plus === token.charCodeAt(1) && isUnicodeRange.test(token.slice(2))) {
-            tokens2.push({
+            tokens3.push({
               type: "unicode-range",
               sourceIndex: pos,
               sourceEndIndex: next,
               value: token
             });
           } else {
-            tokens2.push({
+            tokens3.push({
               type: "word",
               sourceIndex: pos,
               sourceEndIndex: next,
@@ -24148,11 +24148,58 @@ var sourceSansProFont = (0, import_core2.createFont)({
     700: { normal: "SourceSansPro_700Bold" }
   }
 });
+var tokens2 = (0, import_core2.createTokens)({
+  ...config.tokens,
+  color: {
+    ...config.tokens.color,
+    // Light theme colors
+    lightBackground: "#FFFFFF",
+    lightSurface: "#F5F5F5",
+    lightPrimary: "#3340CF",
+    lightText: "#000000",
+    lightTextSecondary: "#626262",
+    lightBorder: "#E0E0E0",
+    lightCard: "#FFFFFF",
+    // Dark theme colors
+    darkBackground: "#121212",
+    darkSurface: "#1E1E1E",
+    darkPrimary: "#5B6EFF",
+    darkText: "#FFFFFF",
+    darkTextSecondary: "#B0B0B0",
+    darkBorder: "#2C2C2C",
+    darkCard: "#1E1E1E"
+  }
+});
 var config2 = createTamagui({
   ...config,
   fonts: {
     heading: sourceSansProFont,
     body: sourceSansProFont
+  },
+  tokens: tokens2,
+  themes: {
+    light: {
+      background: tokens2.color.lightBackground,
+      surface: tokens2.color.lightSurface,
+      primary: tokens2.color.lightPrimary,
+      text: tokens2.color.lightText,
+      textSecondary: tokens2.color.lightTextSecondary,
+      border: tokens2.color.lightBorder,
+      card: tokens2.color.lightCard,
+      color: tokens2.color.lightText,
+      shadowColor: "rgba(0, 0, 0, 0.16)"
+    },
+    dark: {
+      background: tokens2.color.darkBackground,
+      surface: tokens2.color.darkSurface,
+      primary: tokens2.color.darkPrimary,
+      text: tokens2.color.darkText,
+      textSecondary: tokens2.color.darkTextSecondary,
+      border: tokens2.color.darkBorder,
+      card: tokens2.color.darkCard,
+      color: tokens2.color.darkText,
+      shadowColor: "rgba(0, 0, 0, 0.5)"
+    }
   }
 });
 // Annotate the CommonJS export names for ESM import in node:

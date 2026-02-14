@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { TamaguiProvider } from 'tamagui'
 import { config } from '@travel/config'
+import { ThemeProvider, useTheme } from '@travel-2026/lib'
 import { 
   SignUpScreen, 
   WelcomeScreen,
@@ -11,7 +12,8 @@ import {
 
 type Screen = 'signup' | 'onboarding' | 'welcome' | 'preferences' | 'trips';
 
-function App() {
+function AppContent() {
+  const { theme } = useTheme();
   const [currentScreen, setCurrentScreen] = useState<Screen>('signup');
 
   // Navigation Flow:
@@ -59,7 +61,7 @@ function App() {
   };
 
   return (
-    <TamaguiProvider config={config} defaultTheme="light">
+    <TamaguiProvider config={config} defaultTheme={theme}>
       <div style={{ 
         width: '100vw', 
         height: '100vh',
@@ -67,7 +69,7 @@ function App() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: theme === 'dark' ? '#0A0A0A' : '#f5f5f5',
         fontFamily: 'SourceSansPro_400Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
       }}>
         {/* Mobile viewport container */}
@@ -76,8 +78,8 @@ function App() {
           maxWidth: '430px',
           height: '100%',
           maxHeight: '932px',
-          backgroundColor: '#ffffff',
-          boxShadow: '0 0 20px rgba(0,0,0,0.1)',
+          backgroundColor: theme === 'dark' ? '#121212' : '#ffffff',
+          boxShadow: theme === 'dark' ? '0 0 20px rgba(0,0,0,0.5)' : '0 0 20px rgba(0,0,0,0.1)',
           overflow: 'auto',
           position: 'relative'
         }}>
@@ -86,6 +88,14 @@ function App() {
       </div>
     </TamaguiProvider>
   )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
 }
 
 export default App

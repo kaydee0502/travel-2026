@@ -11,9 +11,9 @@ export const Chip: React.FC<ChipProps> = ({ label, selected, onPress }) => {
   return (
     <XStack
       onPress={onPress}
-      backgroundColor={selected ? '#3340CF' : '#FFFFFF'}
+      backgroundColor={selected ? '$primary' : '$card'}
       borderWidth={1}
-      borderColor={selected ? '#3340CF' : '#030303'}
+      borderColor={selected ? '$primary' : '$text'}
       borderRadius="$8"
       paddingHorizontal="$3"
       paddingVertical="$2"
@@ -26,7 +26,7 @@ export const Chip: React.FC<ChipProps> = ({ label, selected, onPress }) => {
         fontSize={14}
         fontFamily="$body"
         fontWeight="400"
-        color={selected ? '#FFFFFF' : '#030303'}
+        color={selected ? '#FFFFFF' : '$text'}
       >
         {label}
       </Text>

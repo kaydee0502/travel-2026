@@ -2,6 +2,11 @@
 
 Shared library utilities for the Travel 2026 application.
 
+## Contents
+
+- [Axios Interceptor](#axios-interceptor) - HTTP client with authentication and error handling
+- [Theme System](#theme-system) - Dark/light theme management
+
 ## Axios Interceptor
 
 A pre-configured axios instance with request and response interceptors.
@@ -79,3 +84,50 @@ try {
   console.error('Failed to fetch users:', error);
 }
 ```
+
+---
+
+## Theme System
+
+A comprehensive dark/light theme system with persistent storage and Tamagui integration.
+
+### Quick Start
+
+```typescript
+import { ThemeProvider, useTheme } from '@travel-2026/lib';
+import { ThemeToggle } from '@travel/ui';
+
+// 1. Wrap your app
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+// 2. Use the theme
+function AppContent() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    <TamaguiProvider config={config} defaultTheme={theme}>
+      <ThemeToggle size="medium" />
+      {/* Your app content */}
+    </TamaguiProvider>
+  );
+}
+```
+
+### Features
+
+- 🌓 Light & Dark themes
+- 💾 Persistent storage (localStorage)
+- 🎨 Tamagui design tokens
+- 🔄 Easy toggle component
+- 📱 Cross-platform support
+- 🎯 System preference detection
+
+### Documentation
+
+For complete theme system documentation, see [THEME.md](./THEME.md)

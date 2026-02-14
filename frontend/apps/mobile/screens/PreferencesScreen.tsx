@@ -48,7 +48,7 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
   };
 
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
+    <View flex={1} backgroundColor="$background">
       <ScrollView flex={1} showsVerticalScrollIndicator={false}>
         <YStack paddingHorizontal="$4" paddingVertical="$6" gap="$6">
           {/* Travel Vibe Section */}
@@ -57,15 +57,15 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
               fontSize={18}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
             >
               What kind of travel vibe are you into?
             </Text>
             <YStack gap="$1">
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 Pick as many as you
               </Text>
-              <Text fontSize={10} fontFamily="$body" color="#000000">
+              <Text fontSize={10} fontFamily="$body" color="$text">
                 like
               </Text>
             </YStack>
@@ -88,7 +88,7 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
                 fontSize={18}
                 fontFamily="$body"
                 fontWeight="400"
-                color="#3340CF"
+                color="$primary"
               >
                 Where do you love to crash after a day
               </Text>
@@ -96,16 +96,16 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
                 fontSize={18}
                 fontFamily="$body"
                 fontWeight="400"
-                color="#3340CF"
+                color="$primary"
               >
                 of adventure?
               </Text>
             </YStack>
             <YStack gap="$1">
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 Your ideal stay looks
               </Text>
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 like...
               </Text>
             </YStack>
@@ -127,15 +127,15 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
               fontSize={18}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
             >
               What kind of food excites your taste buds?
             </Text>
             <YStack gap="$1">
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 Your foodie
               </Text>
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 favorites...
               </Text>
             </YStack>
@@ -157,15 +157,15 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
               fontSize={18}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
             >
               What activities are you interested in?
             </Text>
             <YStack gap="$1">
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 Let's plan for what you love
               </Text>
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 doing...
               </Text>
             </YStack>
@@ -187,15 +187,15 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
               fontSize={18}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
             >
               Who do you usually travel with?
             </Text>
             <YStack gap="$1">
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 This helps us tailor the experience to your
               </Text>
-              <Text fontSize={12} fontFamily="$body" color="#000000">
+              <Text fontSize={12} fontFamily="$body" color="$text">
                 group!
               </Text>
             </YStack>
@@ -224,7 +224,7 @@ export const PreferencesScreen: React.FC<PreferencesScreenProps> = ({ onSubmit, 
               fontSize={14}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
               onPress={handleSkip}
               cursor="pointer"

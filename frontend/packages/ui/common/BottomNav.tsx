@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { XStack, YStack, Text, View } from 'tamagui';
+import { XStack, YStack, Text, View, useTheme } from 'tamagui';
 import { Image } from 'react-native';
 
 interface NavItem {
@@ -14,6 +14,7 @@ interface BottomNavProps {
 }
 
 export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTabPress }) => {
+  const theme = useTheme();
   const navItems: NavItem[] = [
     { label: 'Explore', icon: '🔍' },
     { label: 'Near Me', icon: '📍' },
@@ -29,8 +30,8 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTab
       left={0}
       right={0}
       height={54}
-      backgroundColor="#FFFFFF"
-      shadowColor="rgba(0, 0, 0, 0.16)"
+      backgroundColor="$card"
+      shadowColor="$shadowColor"
       shadowOffset={{ width: 0, height: 2 }}
       shadowOpacity={1}
       shadowRadius={8}
@@ -39,6 +40,8 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTab
       paddingVertical="$2"
       justifyContent="space-around"
       alignItems="center"
+      borderTopWidth={1}
+      borderTopColor="$border"
     >
       {navItems.map((item) => (
         <YStack
@@ -59,7 +62,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'Trips', onTab
             fontSize={8}
             fontFamily="$body"
             fontWeight="400"
-            color={activeTab === item.label ? '#3340CF' : '#626262'}
+            color={activeTab === item.label ? '$primary' : '$textSecondary'}
           >
             {item.label}
           </Text>

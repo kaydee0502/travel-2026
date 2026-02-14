@@ -21,7 +21,7 @@ export const Input: React.FC<InputProps> = ({
       <Text
         fontSize={14}
         fontFamily="$body"
-        color="#000000"
+        color="$text"
         fontWeight="400"
       >
         {label}
@@ -31,22 +31,22 @@ export const Input: React.FC<InputProps> = ({
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
-        backgroundColor="#FFFFFF"
+        backgroundColor="$card"
         borderWidth={1}
-        borderColor="#E5E5E5"
+        borderColor="$border"
         borderRadius={9999}
         fontSize={14}
         fontFamily="$body"
         fontWeight="400"
-        color="#000000"
+        color="$text"
         // @ts-ignore - Tamagui color token type issue
-        placeholderTextColor="#9CA3AF"
+        placeholderTextColor="$textSecondary"
         paddingHorizontal={20}
         paddingVertical={14}
         height={48}
         outlineWidth={0}
         focusStyle={{
-          borderColor: "#3340CF",
+          borderColor: "$primary",
           borderWidth: 2,
           outlineWidth: 0,
         }}

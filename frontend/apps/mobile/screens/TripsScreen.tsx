@@ -1,7 +1,7 @@
 import React from 'react';
 import { YStack, XStack, Text, View, Image } from 'tamagui';
 import { StyleSheet } from 'react-native';
-import { Button, BottomNav } from '@travel/ui';
+import { Button, BottomNav, ThemeToggle } from '@travel/ui';
 
 // Trip images - using require for React Native
 const Image1 = require('../assets/trips/Image1.png');
@@ -26,7 +26,7 @@ export const TripsScreen: React.FC = () => {
   };
 
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
+    <View flex={1} backgroundColor="$background">
       {/* Header */}
       <XStack
         position="absolute"
@@ -37,19 +37,17 @@ export const TripsScreen: React.FC = () => {
         paddingBottom="$2"
         paddingHorizontal="$4"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-between"
         zIndex={10}
-        backgroundColor="#FFFFFF"
+        backgroundColor="$background"
       >
         {/* Back Button */}
         <View
-          position="absolute"
-          left="$4"
           onPress={handleBack}
           cursor="pointer"
           pressStyle={{ opacity: 0.7 }}
         >
-          <Text fontSize={18} color="#3340CF">←</Text>
+          <Text fontSize={18} color="$primary">←</Text>
         </View>
 
         {/* Title */}
@@ -57,10 +55,12 @@ export const TripsScreen: React.FC = () => {
           fontSize={16}
           fontFamily="$body"
           fontWeight="700"
-          color="#3340CF"
+          color="$text"
         >
           Trips
         </Text>
+        
+        <ThemeToggle size="small" />
       </XStack>
 
       {/* Main Content Area */}
@@ -161,7 +161,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               Your{' '}
@@ -170,7 +170,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="700"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               next adventure
@@ -179,7 +179,7 @@ export const TripsScreen: React.FC = () => {
               fontSize={16}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               {' '}awaits you

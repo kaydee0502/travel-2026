@@ -24,18 +24,18 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       backgroundColor={
         disabled
-          ? '#C1C1C1'
+          ? '$textSecondary'
           : isPrimary
-          ? '#3340CF'
-          : '#FFFFFF'
+          ? '$primary'
+          : '$card'
       }
       borderWidth={isPrimary ? 0 : 1}
       borderColor={
         disabled
-          ? '#C1C1C1'
+          ? '$textSecondary'
           : isPrimary
           ? 'transparent'
-          : '#7F7F7F'
+          : '$textSecondary'
       }
       borderRadius="$8"
       paddingVertical="$3"
@@ -62,12 +62,10 @@ export const Button: React.FC<ButtonProps> = ({
         fontFamily="$body"
         color={
           disabled
-            ? '#7F7F7F'
+            ? '$border'
             : isPrimary
             ? '#FFFFFF'
-            : variant === 'outline'
-            ? '#000000'
-            : '#262626'
+            : '$text'
         }
         fontWeight="400"
       >

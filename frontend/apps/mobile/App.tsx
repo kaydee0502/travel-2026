@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { TamaguiProvider, YStack, Text } from 'tamagui'
 import { config } from '@travel/config'
+import { ThemeProvider, useTheme } from '@travel-2026/lib'
 import { 
   SignUpScreen, 
   WelcomeScreen, 
@@ -12,7 +13,8 @@ import { useFonts, SourceSansPro_400Regular, SourceSansPro_600SemiBold, SourceSa
 
 type Screen = 'signup' | 'onboarding' | 'welcome' | 'preferences' | 'trips';
 
-export default function App() {
+function AppContent() {
+  const { theme } = useTheme();
   const [currentScreen, setCurrentScreen] = useState<Screen>('signup');
   
   const [fontsLoaded] = useFonts({
@@ -70,10 +72,18 @@ export default function App() {
   };
 
   return (
-    <TamaguiProvider config={config} defaultTheme="light">
+    <TamaguiProvider config={config} defaultTheme={theme}>
       <YStack flex={1}>
         {renderScreen()}
       </YStack>
     </TamaguiProvider>
   )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
 }

@@ -21,7 +21,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
   const isFormValid = name.trim() && phone.trim() && country.trim();
 
   return (
-    <View flex={1} backgroundColor="#FFFFFF">
+    <View flex={1} backgroundColor="$background">
       <YStack
         flex={1}
         paddingHorizontal="$4"
@@ -34,7 +34,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
               fontSize={24}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               Let's get{' '}
@@ -43,7 +43,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
               fontSize={24}
               fontFamily="$body"
               fontWeight="700"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               you
@@ -52,7 +52,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
               fontSize={24}
               fontFamily="$body"
               fontWeight="400"
-              color="#3340CF"
+              color="$primary"
               textAlign="center"
             >
               {' '}setup!
@@ -63,7 +63,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
               fontSize={12}
               fontFamily="$body"
               fontWeight="400"
-              color="#000000"
+              color="$text"
               textAlign="center"
             >
               User profile setup helps personalise your app experience.
@@ -72,7 +72,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onNext }) =>
               fontSize={12}
               fontFamily="$body"
               fontWeight="400"
-              color="#000000"
+              color="$text"
               textAlign="center"
             >
               You can change these detail in your profile later.
