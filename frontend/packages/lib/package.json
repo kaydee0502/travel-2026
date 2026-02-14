@@ -1,0 +1,12 @@
+{
+  "name": "@travel-2026/lib",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.ts",
+  "dependencies": {
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
